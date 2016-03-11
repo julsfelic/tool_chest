@@ -1,0 +1,19 @@
+
+<br>
+<%= link_to "register", new_user_path %> <br>
+<% if current_user %>
+<%= link_to "account", user_path(current_user.id) %> <br>
+<%= link_to "log out", logout_path, method: :delete %> <br>
+<% else %>
+<%= link_to "log in", login_path%> <br>
+<% end %>
+
+<%= link_to "create category", new_admin_category_path %> <br>
+
+
+<%= flash[:alert] %>
+
+
+<!-- <% @tools.each do |tool| %>
+<p><%= tool.name %> - <%= tool.quantity %></p> <%= link_to "Tool_index", tool_path(tool.id) %>
+<% end %> -->

@@ -1,0 +1,14 @@
+<%= flash[:alert] %>
+
+<%= link_to "Create new tool", new_tool_path %>
+<!--
+<% @tools.each do |tool| %>
+<p><%= tool.name  %></p>
+<% end %> -->
+
+<% @categories.each do |category| %>
+  <h4>  <%= category.name %> </h4>
+  <% category.user_tools(@user.id).each do |tool| %>
+    <p> <%= tool.name %>  </p>
+  <% end %>
+<% end %>
